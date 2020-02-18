@@ -61,7 +61,8 @@ public class DatabaseCheck {
                             "  `md5_v` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,\n" +
                             "  `md5_m` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,\n" +
                             "  `crc` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,\n" +
-                            " `VoteDate`  DATE  DEFAULT NULL,,\n" +
+                            " `VoteDate`  DATE  DEFAULT NULL,\n" +
+                            "  `Type` int(1) DEFAULT '0',\n" +
                             "  PRIMARY KEY (`ID`)\n" +
                             ") ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;";
                     statement.executeUpdate(SQL);
