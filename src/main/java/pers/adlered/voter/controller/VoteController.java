@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pers.adlered.voter.analyzer.Selection;
 import pers.adlered.voter.analyzer.Serialize;
-import pers.adlered.voter.dao.Vote;
+import pers.adlered.voter.domain.Vote;
 import pers.adlered.voter.limit.IpUtil;
 import pers.adlered.voter.limit.LoadingCacheServiceImpl;
-import pers.adlered.voter.mapper.VoteMapper;
+import pers.adlered.voter.service.VoteMapper;
 import pers.adlered.voter.tool.GetDate;
 
 import javax.annotation.Resource;
@@ -41,8 +41,7 @@ public class VoteController {
         //Selection process
         List<Map<String, String>> selects = Selection.analyze(vote.getSelection());
         modelAndView.addObject("Selection", selects);
-        List<Map<String, String>> details = Selection.analyze(vote.getDetail());
-        modelAndView.addObject("Detail", details);
+
         modelAndView.addObject("YEAR", GetDate.year());
         return modelAndView;
     }
@@ -90,8 +89,9 @@ public class VoteController {
         }
         //Update
         try {
-            voteMapper.insertVote(title, describe, selection,detail, type, limit);
-            Integer VID = voteMapper.queryVoteID(title, describe, selection,detail, type, limit);
+            String pass="";
+            voteMapper.insertVote(title, describe, selection , type, limit,pass);
+            Integer VID = voteMapper.queryVoteID(title, describe, selection,  type, limit);
             return VID;
         } catch (Exception E) {
             E.printStackTrace();
@@ -106,7 +106,7 @@ public class VoteController {
         String ipAndVID = ipAddr + ":" + VID;
         try {
             RateLimiter limiter = loadingCacheService.getRateLimiter(ipAndVID);
-            boolean localAccess = false;
+            boolean localAccess = true;
             //Localhost is in the WhiteList
             if (ipAddr.equals("0:0:0:0:0:0:0:1")) {
                 localAccess = true;
@@ -162,4 +162,5 @@ public class VoteController {
         }
         return "0";
     }
+
 }

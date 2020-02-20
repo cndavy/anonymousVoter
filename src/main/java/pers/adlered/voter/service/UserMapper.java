@@ -1,4 +1,4 @@
-package pers.adlered.voter.mapper;
+package pers.adlered.voter.service;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;

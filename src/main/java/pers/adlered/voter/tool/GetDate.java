@@ -9,4 +9,9 @@ public class GetDate {
         Date date = new Date();
         return Integer.parseInt(simpleDateFormat.format(date));
     }
+    public static Integer ymd() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        Date date = new Date();
+        return Integer.parseInt(simpleDateFormat.format(date));
+    }
 }

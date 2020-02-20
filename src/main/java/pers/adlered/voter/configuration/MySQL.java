@@ -9,7 +9,7 @@ package pers.adlered.voter.configuration;
  * @author admin
  */
 public class MySQL {
-    public static String IP = "localhost";
+    public static String IP = "47.105.71.175";
     public static Integer Port = 3306;
     public static String Username = "vote";
     public static String Password = "vote_6";

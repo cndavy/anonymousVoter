@@ -1,8 +1,8 @@
-package pers.adlered.voter.mapper;
+package pers.adlered.voter.service;
 
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
-import pers.adlered.voter.dao.Vote;
+import pers.adlered.voter.domain.Vote;
 
 @Mapper
 @Service
@@ -17,12 +17,14 @@ public interface VoteMapper {
     int vote(@Param("Selection") String selection, @Param("VID") Integer VID);
 
     @Insert("INSERT INTO Voter_Vote" +
-            " (Title, `Describe`, Selection, Detail,Type, `Limit`) VALUES" +
-            " (#{title}, #{describe}, #{selection} , #{type}, #{limit})")
-    void insertVote(@Param("title") String title, @Param("describe") String describe, @Param("selection") String selection,  @Param("type") Integer type, @Param("limit") Integer limit);
+            " (Title, `Describe`, Selection, Type, `Limit`,pass) VALUES" +
+            " (#{title}, #{describe}, #{selection} , #{type}, #{limit}, #{pass})")
+    void insertVote(@Param("title") String title, @Param("describe") String describe, @Param("selection") String selection,  @Param("type") Integer type, @Param("limit") Integer limit,@Param("pass") String pass);
 
     @Select("SELECT VID FROM Voter_Vote WHERE" +
             " Title = #{title} AND `Describe` = #{describe} AND Selection = #{selection} AND Type = #{type} AND `Limit` = #{limit}" +
             " ORDER BY VID DESC LIMIT 1")
     Integer queryVoteID(@Param("title") String title, @Param("describe") String describe, @Param("selection") String selection, @Param("type") Integer type, @Param("limit") Integer limit);
+
+
 }

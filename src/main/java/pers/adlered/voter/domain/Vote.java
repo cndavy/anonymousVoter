@@ -1,4 +1,4 @@
-package pers.adlered.voter.dao;
+package pers.adlered.voter.domain;
 
 public class Vote {
     private Integer VID;
