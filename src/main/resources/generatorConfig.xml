@@ -18,7 +18,7 @@
         </commentGenerator>
         <!--jdbc的数据库连接-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="${spring.datasource.url}"
+                        connectionURL="${spring.datasource.url}&amp;nullCatalogMeansCurrent=true"
                         userId="${spring.datasource.username}"
                         password="${spring.datasource.password}">
         </jdbcConnection>
@@ -58,21 +58,23 @@
             <property name="trimStrings" value="true" />
         </javaClientGenerator>
         <table  schema="Voter" tableName="Voter_Vote_Detail" domainObjectName="VoteDetail"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
+               enableCountByExample="true" enableUpdateByExample="true" enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="true" enableSelectByExample="true"     selectByPrimaryKeyQueryId="true" enableSelectByPrimaryKey="true"
                selectByExampleQueryId="true">
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
 
         </table>
         <table schema="Voter" tableName="Voter_Vote_Token" domainObjectName="VoteToken"
                enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true"
+               selectByPrimaryKeyQueryId="true" enableSelectByPrimaryKey="true"
                selectByExampleQueryId="true">
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
         </table>
         <table  schema="Voter" tableName="Voter_Vote" domainObjectName="Vote1"
-               enableCountByExample="true" enableUpdateByExample="true"
+               enableCountByExample="true" enableUpdateByExample="true" enableUpdateByPrimaryKey="true"
                enableDeleteByExample="true" enableSelectByExample="true"
+                selectByPrimaryKeyQueryId="true" enableSelectByPrimaryKey="true"
                selectByExampleQueryId="true" >
             <property name="details" value="VoteDetail"  />
             <generatedKey column="VID" sqlStatement="MySql" identity="true" />

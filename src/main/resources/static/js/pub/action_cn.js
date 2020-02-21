@@ -78,12 +78,9 @@ function addOption() {
     append="" +"       <div class=\"tab-pane\" id=\"detail" + options + "\">" +
                "             <form role=\"form\">" +
                 "                   <div class=\"form-group\">" +
-
                 "                          <label for=\"text" + options +"\">简介" + options + "</label>" +
                  "                         <textarea class=\"form-control\" rows=\"30\" id=\"text" + options + "\"></textarea>" +
-
                  "                 </div>" +
-
                   "            </form>" +
                    "        </div>";
      $(".tab_add").before(append);
@@ -100,8 +97,12 @@ function delOption() {
         "                </button>\n" +
         "            </span>");
 
-      $("#detail" + options ).remove();
-       $("#tabOption li")[options].remove();
+    $("#detail" + options ).remove();
+    $("#tabOption > li").siblings().removeClass("active");
+    $("#tabOption > li").first().addClass("active");
+
+
+
 }
 
 function showTabView(){

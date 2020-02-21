@@ -125,25 +125,19 @@
                     <label for="text1">简介1</label>
                     <textarea class="form-control" rows="30" id="text1"></textarea>
                 </div>
-
             </form>
         </div>
         <div class="tab-pane" id="detail2">
             <form role="form">
                 <div class="form-group">
-
                         <label for="text2">简介2</label>
                         <textarea class="form-control" rows="30" id="text2"></textarea>
-
                 </div>
-
             </form>
         </div>
-
         <div class="tab-pane" id="detail3">
             <form role="form">
                 <div class="form-group">
-
                         <label for="text3">简介3</label>
                         <textarea class="form-control" rows="30" id="text3"></textarea>
 
@@ -170,7 +164,8 @@
 <footer class="footer">
     <div class="container">
         <br>
-        <span class="text-muted" th:text="'© ️' + ${YEAR}"></span><span>&nbsp;<a href=https://github.com/AdlerED/Voter>Voter</a>
+        <!--/*@thymesVar id="YEAR" type="pers.adlered.voter.tool.GetDate"*/-->
+        <span class="text-muted" th:text="'© ️' + ${YEAR}"></span><span>&nbsp;<a href=#>Voter</a>
         <img height="32" src="/static/images/china.png" width="32"/></span>
     </div>
 </footer>

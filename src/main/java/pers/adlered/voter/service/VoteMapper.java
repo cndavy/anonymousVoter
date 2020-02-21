@@ -17,12 +17,12 @@ public interface VoteMapper {
     int vote(@Param("Selection") String selection, @Param("VID") Integer VID);
 
     @Insert("INSERT INTO Voter_Vote" +
-            " (Title, `Describe`, Selection, Type, `Limit`,pass) VALUES" +
+            " (Title, `Describes`, Selection, Type, `Limits`,pass) VALUES" +
             " (#{title}, #{describe}, #{selection} , #{type}, #{limit}, #{pass})")
     void insertVote(@Param("title") String title, @Param("describe") String describe, @Param("selection") String selection,  @Param("type") Integer type, @Param("limit") Integer limit,@Param("pass") String pass);
 
     @Select("SELECT VID FROM Voter_Vote WHERE" +
-            " Title = #{title} AND `Describe` = #{describe} AND Selection = #{selection} AND Type = #{type} AND `Limit` = #{limit}" +
+            " Title = #{title} AND `Describes` = #{describe} AND Selection = #{selection} AND Type = #{type} AND `Limits` = #{limit}" +
             " ORDER BY VID DESC LIMIT 1")
     Integer queryVoteID(@Param("title") String title, @Param("describe") String describe, @Param("selection") String selection, @Param("type") Integer type, @Param("limit") Integer limit);
 
