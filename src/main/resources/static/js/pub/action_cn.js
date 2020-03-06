@@ -58,6 +58,7 @@ var options = 3;
 function addOption() {
     $("#close" + options).remove();
     ++options;
+
     var append = "" +
         "    <div class=\"option" + options + "\">\n" +
         "        <div class=\"input-group\">\n" +
@@ -75,6 +76,7 @@ function addOption() {
     $(".add").before(append);
     append="" +"<li><a href=\"#detail" + options + "\" tt=\"\" data-toggle=\"tab\">选项 " + options +"</a></li>";
     $(".nav_add").before(append);
+
     append="" +"       <div class=\"tab-pane\" id=\"detail" + options + "\">" +
                "             <form role=\"form\">" +
                 "                   <div class=\"form-group\">" +
@@ -84,11 +86,18 @@ function addOption() {
                   "            </form>" +
                    "        </div>";
      $(".tab_add").before(append);
+    $("#tabOption > li").siblings().removeClass("active");
+    $("#tabOption > li:last").addClass("active");
+
+   $("#myTabContent > div.tab-pane").removeClass("active");
+    $("#myTabContent > div.tab-pane:last").addClass("active");
+
 
 }
 
 function delOption() {
     $(".option" + options).remove();
+    $("#detail" + options ).remove();
     --options;
     $(".option" + options + " .cls").after("" +
         "            <span class=\"input-group-btn\" id=\"close" + options + "\">\n" +
@@ -97,10 +106,13 @@ function delOption() {
         "                </button>\n" +
         "            </span>");
 
-    $("#detail" + options ).remove();
     $("#tabOption > li").siblings().removeClass("active");
+    $("#tabOption > li > a:last").remove();
     $("#tabOption > li").first().addClass("active");
 
+    $("#myTabContent > div.tab-pane").removeClass("active");
+    //$("#detail1").addClass("active");
+    $("#myTabContent > div.tab-pane:first").addClass("active");
 
 
 }

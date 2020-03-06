@@ -1,0 +1,28 @@
+
+spring:
+  profiles:
+    active: dev
+---
+debug: true
+spring:
+  profiles: dev
+demo:
+ age: 22
+ name: dev
+ email: aaaaabbbbb@com.cn
+ boss: false
+server:
+  servlet:
+    context-path: /
+logging:
+  level:
+    pers.adlered.voter: trace
+---
+
+spring:
+  profiles: prod
+demo:
+  age: 24
+  name: prod
+  email: aaaaabbbbb@com.cn
+  boss: false

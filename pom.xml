@@ -12,7 +12,7 @@
     <artifactId>voter</artifactId>
     <version>1.0.0</version>
     <name>Voter</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Vote project for Spring  Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -24,6 +24,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
         <dependency>
@@ -31,7 +37,6 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>${mybatis.boot.version}</version>
         </dependency>
-
 
         <dependency>
             <groupId>mysql</groupId>
@@ -79,7 +84,11 @@
 
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
 
 
         <dependency>
