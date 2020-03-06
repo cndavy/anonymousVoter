@@ -5,13 +5,14 @@
 
 [中文说明](#中文说明)
 
-[English Version](#english-version)
+[English Version]
 
 # 预览 Preview
 
 [公开测试网站 | Public Test Website](https://voter.stackoverflow.wiki/)
 
 ![DEMO](/images/Demo-Full.gif)
+![China](./src/main/resources/static/images/china.png)
 
 # 中文说明
 
@@ -142,3 +143,14 @@ The prescribed voting storage syntax is as follows:
 ```
 
 Analyze and modify this field by the method in `pers.adlered.voter.analyzer`.
+
+
+[]: #english-version
+
+ 
+ ```$java
+
+```
+
+ 
+##

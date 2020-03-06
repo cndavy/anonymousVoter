@@ -89,6 +89,7 @@ function addOption() {
 
 function delOption() {
     $(".option" + options).remove();
+    $("#detail" + options ).remove();
     --options;
     $(".option" + options + " .cls").after("" +
         "            <span class=\"input-group-btn\" id=\"close" + options + "\">\n" +
@@ -97,8 +98,9 @@ function delOption() {
         "                </button>\n" +
         "            </span>");
 
-    $("#detail" + options ).remove();
-    $("#tabOption > li").siblings().removeClass("active");
+
+    $("#tabOption > li > a:last").remove();
+    //$("#tabOption > li").siblings().removeClass("active");
     $("#tabOption > li").first().addClass("active");
 
 
