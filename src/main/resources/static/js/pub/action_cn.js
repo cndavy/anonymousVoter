@@ -87,9 +87,10 @@ function addOption() {
                    "        </div>";
      $(".tab_add").before(append);
     $("#tabOption > li").siblings().removeClass("active");
-    $("#tabOption > li:last").addClass("active")
-   $("#myTabContent > div.tab-pane").removeClass("active")
-    $("#myTabContent > div.tab-pane:last").addClass("active")
+    $("#tabOption > li:last").addClass("active");
+
+   $("#myTabContent > div.tab-pane").removeClass("active");
+    $("#myTabContent > div.tab-pane:last").addClass("active");
 
 
 }
@@ -105,11 +106,13 @@ function delOption() {
         "                </button>\n" +
         "            </span>");
 
-
+    $("#tabOption > li").siblings().removeClass("active");
     $("#tabOption > li > a:last").remove();
-    //$("#tabOption > li").siblings().removeClass("active");
     $("#tabOption > li").first().addClass("active");
 
+    $("#myTabContent > div.tab-pane").removeClass("active");
+    //$("#detail1").addClass("active");
+    $("#myTabContent > div.tab-pane:first").addClass("active");
 
 
 }
