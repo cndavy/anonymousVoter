@@ -42,12 +42,7 @@ public class VoterApplicationTests {
     private MockMvc mvc;
     @Autowired
     demo demo;
-    @Autowired
-    String hello;
-    @Test
-    public void showHello(){
-        System.out.println(hello);
-    }
+
 
    // @Before
     public void setUp() throws Exception {

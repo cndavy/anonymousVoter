@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Internal Server Error | 服务器错误</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom stylesheet -->
+    <link href="/static/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/pub/sticky_footer_navbar.css" rel="stylesheet">
+    <link href="/static/progress/css/component.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Custom script -->
+    <script src="/static/progress/js/modernizr.custom.js"></script>
+</head>
+<body>
+<h1>服务器错误</h1>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <h1>status:[[${status}]]</h1>
+    <h2>timestamp:[[${timestamp}]]</h2>
+    <h2>exception:[[${exception}]]</h2>
+    <h2>message:[[${message}]]</h2>
+    <h2>ext:[[${ext.code}]]</h2>
+    <h2>ext:[[${ext.message}]]</h2>
+</main>
+</body>
+</html>

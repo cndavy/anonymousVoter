@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Internal Server Error | 服务器错误</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<h1>服务器错误</h1>
+
+<div>
+    <div class="alert alert-primary bg-primary" role="alert">
+        <p   th:text=" '状态:' + ${status}"></p>
+    </div>
+    <table class="table table-bordered   table-striped ">
+        <thead class="thead-dark    ">
+        <tr>
+            <th scope="col" >#</th>
+            <th scope="col" >Name</th>
+            <th scope="col"  >Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr >
+            <th scope="row" >1</th>
+            <td  th:text="#{timestamp}" ></td>
+            <td th:text="${#dates.format(timestamp,'yyyy-MM-dd')}" th:if="${timestamp!=null}">@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td th:text="#{code}"></td>
+            <td th:text="${code}" th:if="${code!=null}">@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td th:text="#{msg}" ></td>
+            <td th:text="${msg}" th:if="${msg!=null}">@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>ext</td>
+            <td th:text="${ext}" th:if="${ext!=null}">@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td th:text="#{trace}"></td>
+            <td th:text="${trace}" th:if="${trace!=null}">@mdo</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

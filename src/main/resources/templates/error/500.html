@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Internal Server Error | 服务器错误</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<h1>服务器错误</h1>
+500--
+<div>
+    <h1 th:text="${code}" th:if="${code!=null}">></h1>
+    <h1 th:text="${msg}" th:if="${msg!=null}">></h1>
+    <h1 th:text="${ext}" th:if="${ext!=null}"></h1>
+</div>
+
+</body>
+</html>

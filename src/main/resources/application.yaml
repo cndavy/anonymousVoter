@@ -6,6 +6,11 @@ spring:
 debug: true
 spring:
   profiles: dev
+  messages:
+     basename: i18n.message
+    # 国际化文件夹路径
+     encoding: utf-8
+    # 编码格式
 demo:
  age: 22
  name: dev
@@ -16,7 +21,9 @@ server:
     context-path: /
 logging:
   level:
-    pers.adlered.voter: trace
+    pers.adlered.voter: debug
+
+
 ---
 
 spring:
